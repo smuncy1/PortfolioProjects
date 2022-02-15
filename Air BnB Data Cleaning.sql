@@ -133,9 +133,6 @@ From PortfolioProject..NashvilleHousing
 --Order by ParcelID
 )
 
---DELETE
---From RowNumCTE
---WHERE row_num > 1
 
 SELECT *
 FROM RowNumCTE
