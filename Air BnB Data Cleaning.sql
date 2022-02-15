@@ -122,14 +122,13 @@ SET SoldAsVacant = CASE WHEN SoldAsVacant = 'Y' THEN 'Yes'
 WITH RowNumCTE AS(
 SELECT *, 
 	ROW_NUMBER() OVER (
-	PARTITION BY ParcelID,
-				 PropertyAddress,
-				 SalePrice,
-				 SaleDate,
-				 LegalReference
-				 ORDER BY 
-					UniqueID
-					) as row_num
+	PARTITION BY ParcelID, 
+		     PropertyAddress,
+		     SalePrice,
+		     SaleDate,
+		     LegalReference
+		     ORDER BY UniqueID
+) as row_num
 From PortfolioProject..NashvilleHousing
 --Order by ParcelID
 )
